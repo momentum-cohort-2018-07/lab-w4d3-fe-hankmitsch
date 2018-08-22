@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notes</title>
+    <script src='script.js' defer></script>
+</head>
+
+<body>
+    <div class='container'>
+        <div>
+        <h1 class="pageTitle">Notes Page</h1>
+        </div>
+        <form id="new-note-form">
+            <div class="new-note-field">
+                <h3>New Note</h3>
+            
+                <div class="note-title-field">
+                    <label for="note-title">Title</label>
+                    <input type="text" id="note-title" name="note" required>
+                </div>
+                <div class="note-text-field">
+                    <label for="note-field">Note</label>
+                    <input type="text" id="note" name="note" required>
+                </div>
+            </div>
+            <button type="submit">Add Note</button>
+        </form>
+        <ul id='note-display'>
+           
+        </ul>
+    </div>  
+</body>
+</html>
