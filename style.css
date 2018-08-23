@@ -1,16 +1,101 @@
 body {
   margin: 20px;
+  
+}
+.container {
+    display: flex;
+    flex-direction: column;
 }
 .pageTitle {
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 60px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+button {
+    margin-left: 3%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    width: 15%;
+    font-size: 20px;
+    padding: 8px;
+    border: 2px solid gray;
+    border-radius: 8px;
+    color: grey;
+}
+button:hover {
+    background-color: gray;
+    color: white;
+}
+.form-box {
+    margin-left: 10%;
+    margin-bottom: 5px;
+}
+.newNoteTitle {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    font-weight: lighter;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    margin-left: 3%
+}
+.input-fields {
+    width: 90%;
+    height: 40px;
+    margin: 5px;
+    margin-left: 0px;
+    padding-left: 0px;
+    border: 4px solid grey;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+.input-fields:hover {
+    background-color: rgb(231, 231, 231)
+}
+.input-fields::placeholder {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+}
+.note-title-field {
+    margin-top: 0px;
+}
+.note-text-field {
+    margin-top: 20px;
+}
+.note-display {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    border-left: 1px solid gray;
+}
+.textBody {
+    margin-left: 20%;
+    margin: 40px;
 }
 .note-title {
-    font-weight: bold;
-    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    
 }
-#note-diplay {
-    margin: 10px;
+.noteText {
+    font-family: fantasy;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 15px;
+
+}
+.text-danger {
+    font-size: 50px;
+    color: black;
+}
+a {
+    list-style-type: none;
 }
 li {
-list-style: none;
-}
+    list-style: none;
+    } 

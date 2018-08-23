@@ -8,13 +8,30 @@ request.get('https://notes-api.glitch.me/api/notes')
     let noteSection = getId('note-display')
     for (var i = 0; i < notes.length; i++) {
       let text = el('li')
-      text.classList.add('note-section')
+      text.id = `${notes[i]._id}`
+      text.classList.add('textBody')
       text.innerHTML = `<h3 class="note-title">${notes[i].title}</h3>
-      <p>${notes[i].text}</p>`
+      <p class="noteText">${notes[i].text}</p>`
       noteSection.appendChild(text)
+      let deleteLink = el('a')
+      deleteLink.href = '#'
+      deleteLink.style.paddingLeft = '0.5rem'
+      deleteLink.classList.add('text-danger')
+      deleteLink.innerText = 'x'
+      deleteLink.addEventListener('click', event => {
+        deleteNote(text)
+      })
+      text.appendChild(deleteLink)
       console.log(notes[i])
     }
   })
+function deleteNote (text) {
+  request.delete(`https://notes-api.glitch.me/api/notes/${text.id}`)
+    .auth('HankTest', 'password')
+    .then(response => {
+      document.getElementById(text.id).remove()
+    })
+}
 
 getId('new-note-form').addEventListener('submit', event => {
   event.preventDefault()
@@ -43,23 +60,22 @@ function newPage () {
       let noteSection = getId('note-display')
       for (var i = 0; i < notes.length; i++) {
         let text = el('li')
-        let textTitle = el('li')
-        textTitle.classList.add('note-title')
-        textTitle.innerText = notes[i].title
-        text.innerText = notes[i].text
-        noteSection.appendChild(textTitle)
+        text.id = `${notes[i]._id}`
+        text.classList.add('textBody')
+        text.innerHTML = `<h3 class="note-title">${notes[i].title}</h3>
+        <p>${notes[i].text}</p>`
         noteSection.appendChild(text)
+        let deleteLink = el('a')
+        deleteLink.href = '#'
+        deleteLink.style.paddingLeft = '0.5rem'
+        deleteLink.classList.add('text-danger')
+        deleteLink.innerText = 'x'
+        deleteLink.addEventListener('click', event => {
+          deleteNote(text)
+        })
+        text.appendChild(deleteLink)
         console.log(notes[i])
       }
-    })
-}
-
-
-function deleteNote () {
-  let id = text.id
-  request.delete(`https://notes-api.glitch.me/api/notes/{body.note.id}`)
-    .then(response => {
-      getId(`book-${book.id}`).remove()
     })
 }
 
